@@ -20,6 +20,9 @@ RUN sed -i 's/hostname SA-MP 0.3 Server/hostname SA-MP 0.3 Docker Server/' ~/ser
 RUN sed -i 's/announce 0/announce 1/' ~/server/server.cfg
 RUN sed -i 's/maxplayers 50/maxplayers 1000/' ~/server/server.cfg
 
-CMD ["cd ~/server/ ; ./samp03svr&"]
+ADD run.sh /run.sh
+RUN chmod 755 /*.sh
+
+CMD ["/run.sh"]
 
 EXPOSE 7777
