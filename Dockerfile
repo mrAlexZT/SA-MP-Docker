@@ -14,5 +14,9 @@ RUN cd ~ && \
  cp -Rf /tmp/samp03/* ~/server/ && \
  rm -rf ~/samp037svr_R1.tar.gz && \
  rm -rf /tmp/samp03/
+
+RUN sed -i 's/rcon_password changeme/rcon_password CKA3KuH2015!/' ~/server/server.cfg
  
 EXPOSE 7777
+
+CMD ["cd ~/server/ ; ./samp03svr&"]
