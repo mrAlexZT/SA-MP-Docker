@@ -5,6 +5,7 @@ FROM centos:centos6
 MAINTAINER CKA3KuH
 
 RUN yum update -y
+RUN yum install tar -y
 
 RUN cd ~
 RUN mkdir ~/server/
