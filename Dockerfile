@@ -15,9 +15,11 @@ RUN cd ~ && \
  rm -rf ~/samp037svr_R1.tar.gz && \
  rm -rf /tmp/samp03/
 
-RUN sed -i 's/rcon_password changeme/rcon_password CKA3KuH2015!/' ~/server/server.cfg
+RUN sed -i 's/rcon_password changeme/rcon_password Sa-MpDocker2015!/' ~/server/server.cfg
 RUN sed -i 's/hostname SA-MP 0.3 Server/hostname SA-MP 0.3 Docker Server/' ~/server/server.cfg
- 
-EXPOSE 7777
+RUN sed -i 's/announce 0/announce 1/' ~/server/server.cfg
+RUN sed -i 's/maxplayers 50/maxplayers 1000/' ~/server/server.cfg
 
 CMD ["cd ~/server/ ; ./samp03svr&"]
+
+EXPOSE 7777
