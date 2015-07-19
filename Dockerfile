@@ -16,6 +16,7 @@ RUN cd ~ && \
  rm -rf /tmp/samp03/
 
 RUN sed -i 's/rcon_password changeme/rcon_password CKA3KuH2015!/' ~/server/server.cfg
+RUN sed -i 's/hostname SA-MP 0.3 Server/hostname SA-MP 0.3 Docker Server/' ~/server/server.cfg
  
 EXPOSE 7777
 
