@@ -13,10 +13,10 @@ RUN yum install tar proftpd compat-libstdc++-33.i686 -y && yum install libstdc++
 RUN chkconfig proftpd on
 RUN /etc/init.d/proftpd start
 
-RUN iptables -I INPUT -p tcp -m tcp --dport 21 -m state --state NEW -j ACCEPT
-RUN iptables -I INPUT -p tcp -m tcp --dport 7777 -m state --state NEW -j ACCEPT
-RUN iptables -I INPUT -p udp -m udp --dport 7777 -m state --state NEW -j ACCEPT
-RUN service iptables save
+#RUN iptables -I INPUT -p tcp -m tcp --dport 21 -m state --state NEW -j ACCEPT
+#RUN iptables -I INPUT -p tcp -m tcp --dport 7777 -m state --state NEW -j ACCEPT
+#RUN iptables -I INPUT -p udp -m udp --dport 7777 -m state --state NEW -j ACCEPT
+#RUN service iptables save
 
 RUN cd ~ && \
  mkdir ~/server/ && \
@@ -36,4 +36,5 @@ RUN chmod 755 /*.sh
 
 CMD ["/run.sh"]
 
+EXPOSE 21
 EXPOSE 7777
