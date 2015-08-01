@@ -12,6 +12,11 @@ RUN yum update -y && yum upgrade -y
 RUN yum install tar proftpd compat-libstdc++-33.i686 -y && yum install libstdc++.i686 -y && yum install libstdc++-devel.i686 -y
 RUN chkconfig proftpd on
 
+RUN iptables -I INPUT -p tcp -m tcp --dport 21 -m state --state NEW -j ACCEPT
+RUN iptables -I INPUT -p tcp -m tcp --dport 7777 -m state --state NEW -j ACCEPT
+RUN iptables -I INPUT -p udp -m udp --dport 7777 -m state --state NEW -j ACCEPT
+RUN service iptables save
+
 RUN cd ~ && \
  mkdir ~/server/ && \
  curl -OL http://files.sa-mp.com/samp037svr_R1.tar.gz && \
