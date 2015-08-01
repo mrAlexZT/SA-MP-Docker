@@ -4,8 +4,10 @@ FROM centos:centos6
 
 MAINTAINER CKA3KuH
 
-RUN yum update -y
-RUN yum install tar -y
+RUN wget http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm && wget http://rpms.famillecollet.com/enterprise/remi-release-6.rpm && sudo rpm -Uvh remi-release-6*.rpm epel-release-6*.rpm
+RUN yum update -y && yum upgrade -y
+RUN yum install tar proftpd compat-libstdc++-33.i686 -y && yum install libstdc++.i686 -y && yum install libstdc++-devel.i686 -y
+RUN chkconfig proftpd on
 
 RUN cd ~ && \
  mkdir ~/server/ && \
