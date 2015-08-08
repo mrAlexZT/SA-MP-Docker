@@ -10,8 +10,8 @@ RUN wget http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 RUN rpm -Uvh remi-release-7*.rpm epel-release-7*.rpm
 RUN yum update -y && yum upgrade -y
 RUN yum install tar proftpd compat-libstdc++-33.i686 -y && yum install libstdc++.i686 -y && yum install libstdc++-devel.i686 -y
-RUN chkconfig proftpd on
-RUN /etc/init.d/proftpd start
+RUN systemctl enable proftpd
+RUN systemctl restart proftpd
 
 #RUN iptables -I INPUT -p tcp -m tcp --dport 21 -m state --state NEW -j ACCEPT
 #RUN iptables -I INPUT -p tcp -m tcp --dport 7777 -m state --state NEW -j ACCEPT
