@@ -1,6 +1,6 @@
 # SA-MP-Docker
 
-FROM centos6
+FROM centos:6
 
 MAINTAINER CKA3KuH
 
