@@ -21,9 +21,9 @@ RUN /etc/init.d/proftpd start
 RUN cd ~ && \
  mkdir ~/server/ && \
  curl -OL http://files.sa-mp.com/samp037svr_R2-1.tar.gz && \
- tar -zxf samp037svr_R1.tar.gz -C /tmp/ && \
+ tar -zxf samp037svr*.tar.gz -C /tmp/ && \
  cp -Rf /tmp/samp03/* ~/server/ && \
- rm -rf ~/samp037svr_R1.tar.gz && \
+ rm -rf ~/samp037svr*.tar.gz && \
  rm -rf /tmp/samp03/
 
 RUN sed -i 's/rcon_password changeme/rcon_password Sa-MpDocker2015!/' ~/server/server.cfg
