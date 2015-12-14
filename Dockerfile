@@ -10,7 +10,7 @@ RUN rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 RUN yum update -y && yum upgrade -y
 RUN yum install wget tar vsftpd net-tools compat-libstdc++-33.i686 libstdc++.i686 libstdc++-devel.i686 bash-completion -y
 RUN systemctl enable vsftpd
-RUN systemctl start vsftpd
+RUN service vsftpd start
 
 #RUN iptables -I INPUT -p tcp -m tcp --dport 21 -m state --state NEW -j ACCEPT
 #RUN iptables -I INPUT -p tcp -m tcp --dport 7777 -m state --state NEW -j ACCEPT
