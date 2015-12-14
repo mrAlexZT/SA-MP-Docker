@@ -5,6 +5,7 @@ FROM centos:latest
 MAINTAINER CKA3KuH
 
 ADD setup /opt/setup-os
+RUN chmod +x /opt/setup-os/*.sh
 RUN /opt/setup-os/prepare_os.sh
 
 RUN yum install mc git wget tar vsftpd net-tools tcpdump gcc gcc-c++ make cmake libstdc++-devel compat-libstdc++-33.i686 libstdc++.i686 libstdc++-devel.i686 glibc-devel.i686 bash-completion -y
