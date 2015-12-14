@@ -19,5 +19,7 @@ ADD /conf/supervisord.conf /etc/
 #RUN chmod 755 /*.sh
 #CMD ["/run.sh"]
 
+CMD ["supervisord", "-n"]
+
 EXPOSE 21
 EXPOSE 7777
