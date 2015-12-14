@@ -4,14 +4,13 @@ FROM centos:latest
 
 MAINTAINER CKA3KuH
 
-RUN yum install wget -y
-RUN wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm
-RUN wget http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
-RUN rpm -Uvh remi-release-7*.rpm epel-release-7*.rpm
+RUN rpm -Uvh http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm
+RUN rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
+
 RUN yum update -y && yum upgrade -y
-RUN yum install tar vsftpd compat-libstdc++-33.i686 -y && yum install libstdc++.i686 -y && yum install libstdc++-devel.i686 -y && yum install bash-completion -y
+RUN yum install wget tar vsftpd compat-libstdc++-33.i686 libstdc++.i686 libstdc++-devel.i686 bash-completion -y
 RUN systemctl enable vsftpd
-#RUN systemctl restart vsftpd
+RUN systemctl start vsftpd
 
 #RUN iptables -I INPUT -p tcp -m tcp --dport 21 -m state --state NEW -j ACCEPT
 #RUN iptables -I INPUT -p tcp -m tcp --dport 7777 -m state --state NEW -j ACCEPT
