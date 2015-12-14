@@ -8,7 +8,7 @@ RUN rpm -Uvh http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.no
 RUN rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 
 RUN yum update -y && yum upgrade -y
-RUN yum install mc git wget tar vsftpd net-tools tcpdump gcc gcc-c++ cmake28 make compat-libstdc++-33.i686 libstdc++.i686 libstdc++-devel.i686 bash-completion -y
+RUN yum install mc git wget tar vsftpd net-tools tcpdump gcc gcc-c++ make cmake compat-libstdc++-33.i686 libstdc++.i686 libstdc++-devel.i686 bash-completion -y
 RUN systemctl enable vsftpd
 #RUN service vsftpd start
 
