@@ -7,6 +7,7 @@ MAINTAINER CKA3KuH
 ADD setup /opt/setup-os
 RUN find /opt/setup-os/ -name "*.sh" -exec chmod +x {} \;
 RUN /opt/setup-os/prepare_os.sh
+RUN /opt/setup-os/install_samp.sh
 
 RUN /opt/setup-os/samp_plugins/samp-crashdetect-plugin.sh
 RUN /opt/setup-os/samp_plugins/samp-mysql-plugin.sh
