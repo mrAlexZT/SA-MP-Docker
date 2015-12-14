@@ -8,13 +8,6 @@ ADD setup /opt/setup-os
 RUN chmod +x /opt/setup-os/*.sh
 RUN /opt/setup-os/prepare_os.sh
 
-RUN yum install gcc gcc-c++ make cmake libstdc++-devel compat-libstdc++-33.i686 libstdc++.i686 libstdc++-devel.i686 glibc-devel.i686 -y
-
-#RUN iptables -I INPUT -p tcp -m tcp --dport 21 -m state --state NEW -j ACCEPT
-#RUN iptables -I INPUT -p tcp -m tcp --dport 7777 -m state --state NEW -j ACCEPT
-#RUN iptables -I INPUT -p udp -m udp --dport 7777 -m state --state NEW -j ACCEPT
-#RUN service iptables save
-
 RUN cd ~ && \
  mkdir ~/server/ && \
  curl -OL http://files.sa-mp.com/samp037svr_R2-1.tar.gz && \
