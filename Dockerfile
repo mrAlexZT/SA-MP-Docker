@@ -1,13 +1,12 @@
 # SA-MP-Docker
 
-FROM centos:latest
-
 MAINTAINER CKA3KuH
 
-RUN rpm -Uvh http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm
-RUN rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
+FROM centos:latest
 
-RUN yum update -y && yum upgrade -y
+ADD setup /opt/setup-os
+RUN /opt/setup-os/prepare_os.sh
+
 RUN yum install mc git wget tar vsftpd net-tools tcpdump gcc gcc-c++ make cmake libstdc++-devel compat-libstdc++-33.i686 libstdc++.i686 libstdc++-devel.i686 glibc-devel.i686 bash-completion -y
 RUN systemctl enable vsftpd
 #RUN service vsftpd start
