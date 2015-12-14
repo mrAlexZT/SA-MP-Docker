@@ -1,8 +1,8 @@
 # SA-MP-Docker
 
-MAINTAINER CKA3KuH
-
 FROM centos:latest
+
+MAINTAINER CKA3KuH
 
 ADD setup /opt/setup-os
 RUN /opt/setup-os/prepare_os.sh
