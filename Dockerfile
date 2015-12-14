@@ -13,10 +13,11 @@ RUN /opt/setup-os/samp_plugins/samp-crashdetect-plugin.sh
 RUN /opt/setup-os/samp_plugins/samp-mysql-plugin.sh
 RUN /opt/setup-os/samp_plugins/samp-streamer-plugin.sh
 
-ADD run.sh /run.sh
-RUN chmod 755 /*.sh
+ADD /conf/supervisord.conf /etc/
 
-CMD ["/run.sh"]
+#ADD run.sh /run.sh
+#RUN chmod 755 /*.sh
+#CMD ["/run.sh"]
 
 EXPOSE 21
 EXPOSE 7777
