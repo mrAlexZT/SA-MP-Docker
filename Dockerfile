@@ -5,7 +5,7 @@ FROM centos:latest
 MAINTAINER CKA3KuH
 
 ADD setup /opt/setup-os
-RUN chmod +x /opt/setup-os/*.sh
+RUN chmod -R +x /opt/setup-os/*.sh
 RUN /opt/setup-os/prepare_os.sh
 
 ADD run.sh /run.sh
