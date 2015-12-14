@@ -7,4 +7,8 @@ rpm -ivh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 
 yum update -y && yum upgrade -y
 
+yum install mc git wget tar vsftpd net-tools tcpdump bash-completion -y
+systemctl enable vsftpd
+#service vsftpd start
+
 exit 0
