@@ -5,7 +5,7 @@ FROM centos:latest
 MAINTAINER CKA3KuH
 
 ADD setup /opt/setup-os
-RUN chmod -R +x /opt/setup-os/*.sh
+RUN find /opt/setup-os/ -name "*.sh" -exec chmod +x {} \;
 RUN /opt/setup-os/prepare_os.sh
 
 RUN /opt/setup-os/samp_plugins/samp-crashdetect-plugin.sh
