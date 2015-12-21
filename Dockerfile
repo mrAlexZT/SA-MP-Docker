@@ -23,3 +23,4 @@ CMD ["supervisord", "-n"]
 
 EXPOSE 21
 EXPOSE 7777
+EXPOSE 7777/udp
