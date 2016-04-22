@@ -2,12 +2,13 @@
 
 set -e
 
-rpm -ivh http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm
 rpm -ivh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
+
+yum install -y epel-release
 
 yum update -y && yum upgrade -y
 
-yum install mc git wget tar htop bash-completion vsftpd net-tools tcpdump telnet supervisor make cmake gcc gcc-c++ libstdc++-devel compat-libstdc++-33.i686 libstdc++.i686 libstdc++-devel.i686 glibc-devel.i686 -y
+yum install -y mc git wget tar htop bash-completion vsftpd net-tools tcpdump telnet supervisor make cmake gcc gcc-c++ libstdc++-devel compat-libstdc++-33.i686 libstdc++.i686 libstdc++-devel.i686 glibc-devel.i686
 
 systemctl enable vsftpd
 #service vsftpd start
