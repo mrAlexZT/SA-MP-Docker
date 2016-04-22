@@ -2,9 +2,7 @@
 
 set -e
 
-rpm -ivh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
-
-yum install -y epel-release
+yum install -y epel-release remi-release
 
 yum update -y && yum upgrade -y
 
