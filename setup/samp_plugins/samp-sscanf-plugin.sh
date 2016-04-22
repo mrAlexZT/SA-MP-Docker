@@ -11,3 +11,4 @@ cp /opt/setup-os/samp_plugins/sscanf/sscanf.so ~/server/plugins/
 echo 'plugins sscanf.so' >> ~/server/server.cfg
 
 exit 0
+
